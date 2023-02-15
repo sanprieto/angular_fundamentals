@@ -31,6 +31,7 @@ export class AppComponent {
   changeName( event:Event){
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
+    
   }
 
 
