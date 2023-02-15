@@ -1,13 +1,19 @@
+
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <button (click)="toggleButton()">Toggle Button</button>
 <p>Edad {{ person.age }}</p>
 <button (click)="increaseAge()">Age ++</button>
-
+<hr>
+<div class="box" (scroll)="onScroll($event)">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id lorem nec libero bibendum dictum. Morbi eget tempus velit. Nam sodales mi egestas, consequat elit a, lobortis nisl. Aenean pharetra ut tellus in viverra. Nulla placerat nunc a velit vestibulum, fringilla consequat est facilisis. Aenean interdum sem eu convallis luctus. Nulla maximus nisi a laoreet laoreet. Nullam aliquam felis eget bibendum congue. Donec diam nisi, volutpat id magna eget, mollis pharetra lacus. Pellentesque laoreet nibh ut risus tempus sagittis. Donec vehicula lobortis erat, id tincidunt ex iaculis vitae. Nulla sit amet posuere tortor. Aliquam eu aliquam libero.</p>
+</div>
+<p>Nombre: {{ person.name }}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
 <hr>
 <h1>Propiedades</h1>
 <button [disabled]="btnDisabled">Enviar</button>
-<input type="text" [value]="person.name" />
+<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
 <progress max="100" [value]="person.age"></progress>
 <img width="100" [src]='person.avatar'>
 
