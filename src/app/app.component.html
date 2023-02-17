@@ -1,12 +1,20 @@
 
-<h1>*ngFor</h1>
+<h1>*ngFor Objets</h1>
+<div>
+    <div *ngFor="let product of products">
+        <img width="250" [src]="product.image" alt="image">
+        <h2>{{ product.price }}</h2>
+        <p>{{ product.name }}</p>
+    </div>
+</div>
+<hr>
+<h1>*ngFor Arrays</h1>
 <button (click)="addName()">Add name</button>
 <input type="text" required [(ngModel)]="newName" />
 <ul>
     <li *ngIf="names.length === 0">No hay nombres</li>
     <li *ngFor=" let name of names; index as i">
-        {{ i + name }}
-        <button (click)="deleteName(i)">Delete {{name}}</button>
+        {{ i + name }} <button (click)="deleteName(i)">Delete {{name}}</button>
     </li>
 </ul>
 <hr>
