@@ -4,3 +4,32 @@
     overflow: auto;
     background: red;
 }
+.product--grid{
+    display: flex;
+    flex-direction: column;
+
+    div{
+        img {
+            width: 100%;
+            border-radius: 10px;
+
+        }
+        h2, p{
+            margin:0px;
+        }
+    }
+}
+@media screen and (min-width: 40em) {
+    .product--grid {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 15px;
+    }
+}
+@media screen and (min-width: 62em) {
+    .product--grid {
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+
+
