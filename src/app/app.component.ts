@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from './produtc.model';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +12,12 @@ export class AppComponent {
   age = 44;
   img = "https://source.unsplash.com/random";
   btnDisabled = true;
+
+  register = {
+    name:'',
+    email: '',
+    password:'',
+  }
   person = {
     name:"nicolas",
     age: 18,
@@ -81,5 +88,8 @@ export class AppComponent {
   }
   deleteName(index:number){
     this.names.splice(index, 1)
+  }
+  onRegister(){
+    console.log(this.register)
   }
 }

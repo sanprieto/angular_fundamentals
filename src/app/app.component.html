@@ -1,3 +1,25 @@
+<h1>Formulario</h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+    <div class="input-group">
+        <label for="">Nombre:</label>
+        <input type="text" name="name" #myInput="ngModel" required [(ngModel)]="register.name">
+        <p class="message-error" [class.invalid]="myInput.invalid">Introduce un nombre</p>
+    </div>
+    <div class="input-group">
+        <label for="">Email:</label>
+        <input type="email" name="email" required #myInput2="ngModel" [(ngModel)]="register.email">
+        <p class="message-error" [class.invalid]="myInput2.invalid">Email required</p>
+    </div>
+    <div class="input-group">
+        <label for="">Password:</label>
+        <input type="password" name="password" #myInput3="ngModel"  required  [(ngModel)]="register.password">
+        <p class="message-error" [class.invalid]="myInput3.invalid">Error de password</p>
+    </div>
+    <button [disabled]="myForm.invalid" type="submit">Register</button>
+    <button type="button">Accion</button>
+</form>
+
+
 <h1>NgClass & NgStyle</h1>
 <input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name">
 <hr class="line-error"
