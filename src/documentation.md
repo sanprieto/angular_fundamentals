@@ -1,4 +1,5 @@
 Curso de fundamentos de Angular. Platzi
+
 Estructura de un proyecto
 El nucleo de la aplicacion se encuentra # la carpet src*
 Los componentes se encuentran en el directorio app
