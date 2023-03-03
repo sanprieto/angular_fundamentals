@@ -115,7 +115,7 @@
 <hr>
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
-<button (click)="toggleButton()">Toggle Button</button>
+<button (click)="toggleButton($event)">Toggle Button</button>
 <p>Edad {{ person.age }}</p>
 <button (click)="increaseAge()">Age ++</button>
 <hr>
