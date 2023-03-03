@@ -12,7 +12,7 @@ export class AppComponent {
   name = 'nicolas';
   age: number = 44;
   img: string = "https://source.unsplash.com/random";
-  btnDisabled = true;
+  btnDisabled:boolean = true;
 
   register = {
     name:'',
@@ -66,8 +66,10 @@ export class AppComponent {
     }
   ]
 
-  toggleButton(){
-    this.btnDisabled = !this.toggleButton;
+  toggleButton(event:Event){
+    
+    this.btnDisabled = !this.btnDisabled;
+    console.log('Event: ', event,'disabled', this.btnDisabled)
   }
   increaseAge(){
     this.person.age += 1;
