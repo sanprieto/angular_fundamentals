@@ -7,10 +7,11 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   widthImg = 10;
   name = 'nicolas';
-  age = 44;
-  img = "https://source.unsplash.com/random";
+  age: number = 44;
+  img: string = "https://source.unsplash.com/random";
   btnDisabled = true;
 
   register = {
