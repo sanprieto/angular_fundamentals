@@ -1,7 +1,7 @@
 # Interpolation
 
-Con dobles llaves se puede imprimir el valor de una variable, llamar a una función o realizar operaciones matemáticas.
-La información va desde el typescript al html
+Permite vincular datos de una clase de un componente(typescript)a la plantilla html. Se utiliza para mostrar valores dinámicos. Con dobles llaves se puede imprimir el valor de una variable, llamar a una función o realizar operaciones matemáticas.
+
 ```html
 <h1>{{ 'Hola mundo' + variable }}</h1>
 <h2>1 + 1 = {{ 1 + 1 }}</h2>
@@ -9,9 +9,9 @@ La información va desde el typescript al html
 ````
 # Property binding
 
-Modificar atributos desde el controlador y enviarlos desde el html. Se utiliza el atributo entre corchetes []
+Modificar atributos desde el controlador(typescript) y enviarlos desde el html. Se utiliza el atributo entre corchetes []
 
-_Algunos atributos de ejemplo:_
+_Algunos atributos html de ejemplo:_
 - El atributo [src] de la etiqueta < img > para modificar dinámicamente una imagen.
 - El atributo [href] de un < a > para modificar un enlace.
 - El atributo [value] de un < input > para autocompletar un valor de un formulario.
@@ -72,3 +72,7 @@ toogleButton(event:Event){
 
 }
 ````
+# Data binding con ngModel
+
+El atributo ngModel permite el intercambio de datos de forma bidireccional entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
+
