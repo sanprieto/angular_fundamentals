@@ -112,6 +112,12 @@
 <p>Age: {{ person.age }}</p>
 <input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age" />
 <p>Valid: {{ ageInput.valid }}</p>
+<select [(ngModel)]="seleccion"(change)="mostrarSeleccion()">
+    <option value="opcion1">Opción 1</option>
+    <option value="opcion2">Opción 2</option>
+    <option value="opcion3">Opción 3</option>
+  </select>
+  
 <hr>
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>

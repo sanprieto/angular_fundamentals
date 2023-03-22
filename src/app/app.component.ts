@@ -13,6 +13,7 @@ export class AppComponent {
   age: number = 44;
   img: string = "https://source.unsplash.com/random";
   btnDisabled:boolean = true;
+  seleccion: string = 'opcion1';
 
   register = {
     name:'',
@@ -95,4 +96,8 @@ export class AppComponent {
   onRegister(){
     console.log(this.register)
   }
+  mostrarSeleccion() {
+    console.log('La opción seleccionada es:', this.seleccion);
+  }
+
 }

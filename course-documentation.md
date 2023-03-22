@@ -74,5 +74,9 @@ toogleButton(event:Event){
 ````
 # Data binding con ngModel
 
-El atributo ngModel permite el intercambio de datos de forma bidireccional entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
+El atributo [(ngModel)] permite el intercambio de datos de forma bidireccional entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente. Se puede usar con [] y con () para que la comunicación sea en las dos direcciones, pero se puede usar unidireccionalmente solo usando los corchetes.
+Para hacer uso de ngModel hay que importar el FormsModule.
+
+Creamos en un input el atributo [(ngModel)]
+
 
