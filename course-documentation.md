@@ -16,7 +16,7 @@ _Algunos atributos html de ejemplo:_
 - El atributo [href] de un < a > para modificar un enlace.
 - El atributo [value] de un < input > para autocompletar un valor de un formulario.
 - El atributo [disable] de un < input > para habilitar/deshabilitar un campo de un formulario.
-
+## Ejemplo básico
 ```html
 <button [disable]="booleano">Enviar</button>
 <input type="text" [value]='person.name'/>
@@ -44,7 +44,7 @@ Con event binding angular nos permite controlar los eventos que se suceden en lo
 - (submit) - se produce cuando se envía un formulario.
 - (focus) - se produce cuando un elemento HTML obtiene el foco.
 - (blur) - se produce cuando un elemento HTML pierde el foco.
-
+## Ejemplo básico
 Creamos un método que se va a llamar cuando se haga click en el botón y cambiará el estado del botón en la propiedad "disabled".
 
 ```html
@@ -73,10 +73,42 @@ toogleButton(event:Event){
 }
 ````
 # Data binding con ngModel
+- Para hacer uso de ngModel hay que importar el FormsModule.
+- Se usa con [(ngModel)] y permite el intercambio de datos de forma bidireccional entre la lógica y la vista. 
 
-El atributo [(ngModel)] permite el intercambio de datos de forma bidireccional entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente. Se puede usar con [] y con () para que la comunicación sea en las dos direcciones, pero se puede usar unidireccionalmente solo usando los corchetes.
-Para hacer uso de ngModel hay que importar el FormsModule.
 
-Creamos en un input el atributo [(ngModel)]
+
+## Ejemplo básico
+No es necesario una función o método para hacer el cambio como con event binding. Realiza el cambio de forma automática.
+```html
+<p>Arma: {{ person.arma }}</p>
+<input type="text" [(ngModel)]="person.arma" />
+````
+Con esta sintaxis la propiedad arma de la clase person se actualiza en el input sin necesidad de ningún método.
+## Ejemplo ngModel con variable de plantilla o variable template
+
+```html
+<input [(ngModel)]="mensaje" #texto type="text">
+<button (click)="mostrarTexto(texto.value)">Mostrar</button>
+````
+## Ejemplo ngModel con variable de plantilla o variable template unidas a las validaciones nativas de html
+```html
+<p>Age: {{ person.age }}</p>
+<input type="number" max="18" min="10" required #ageInput="ngModel" [(ngModel)]="person.age" />
+<p>Valid: {{ ageInput.valid }}</p>
+````
+Aquí utilizamos el atributo de validación de html "required" y max y min para conectarlo con nuestra variable template #ageInput que automáticamente va a verificar si se cumplen los parámetros devolviento "true" o "false".
+
+# *ngif 
+Con esta directiva puede usar las condiciones, hacer que un elemento se muestre u otro alternativo.
+
+```html
+<input type="text" required [(ngModel)]="person.name" />
+<p *ngIf="person.name === 'julian' else myBlock">Soy Julian</p>
+<ng-template #myBlock>
+    <p>No eres Julian</p>
+</ng-template>
+````
+Dependiendo del nombre que introduzca te verifica si eres o no Julian.
 
 

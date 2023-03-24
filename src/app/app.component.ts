@@ -14,6 +14,7 @@ export class AppComponent {
   img: string = "https://source.unsplash.com/random";
   btnDisabled:boolean = true;
   seleccion: string = 'opcion1';
+  color:string ='rojo';
 
   register = {
     name:'',
@@ -24,6 +25,7 @@ export class AppComponent {
     name:"nicolas",
     age: 18,
     avatar: "https://source.unsplash.com/random",
+    arma: 'inteligencia',
 
   }
   names: string[] = [ 'Nico','Juli', 'Santi']
@@ -99,5 +101,6 @@ export class AppComponent {
   mostrarSeleccion() {
     console.log('La opción seleccionada es:', this.seleccion);
   }
+
 
 }
