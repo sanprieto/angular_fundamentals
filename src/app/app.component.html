@@ -24,7 +24,7 @@
 <input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name">
 <hr class="line-error"
 [ngClass]="{
-    'cirulo': nameInput4.valid,
+    'valid': nameInput4.valid,
     'invalid': nameInput4.invalid
 }">
 <p class="message-error" [class.invalid]="nameInput4.invalid">El campo es requerido</p>
@@ -47,7 +47,7 @@
 
 <h1>Class & Style</h1>
 <input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
-<p class="message-error" [class.invalid]="nameInput2.touched">El campo es requerido</p>
+<p class="message-error" [class.invalid]="nameInput2.invalid">El campo es requerido</p>
 
 
 <label [style.font-style]="nameInput2.invalid ? 'italic':'normal'">Nombre</label>

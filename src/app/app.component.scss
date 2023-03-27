@@ -42,15 +42,12 @@
 }
 .line-error {
     height: 0;
-    border-bottom: 1px solid;
+    border-bottom: 4px solid;
     &.invalid{
         border-color: red;
     }
     &.valid{
         border-color: green;
-    }
-    &.cirulo{
-        border-color: violet;
     }
 }
 .styles{
