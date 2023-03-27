@@ -1,6 +1,6 @@
 # Interpolation
 
-Permite vincular datos de una clase de un componente(typescript)a la plantilla html. Se utiliza para mostrar valores dinámicos. Con dobles llaves se puede imprimir el valor de una variable, llamar a una función o realizar operaciones matemáticas.
+Permite vincular datos de una clase de la lógica(typescript)a la vista (html). Se utiliza para mostrar valores dinámicos. Con dobles llaves se puede imprimir el valor de una variable, llamar a una función o realizar operaciones matemáticas.
 
 ```html
 <h1>{{ 'Hola mundo' + variable }}</h1>
@@ -9,7 +9,7 @@ Permite vincular datos de una clase de un componente(typescript)a la plantilla h
 ````
 # Property binding
 
-Modificar atributos desde el controlador(typescript) y enviarlos desde el html. Se utiliza el atributo entre corchetes []
+Permite modificar atributos desde el controlador(typescript) y enviarlos desde el html. Se utiliza el atributo entre corchetes []
 
 _Algunos atributos html de ejemplo:_
 - El atributo [src] de la etiqueta < img > para modificar dinámicamente una imagen.
@@ -111,4 +111,37 @@ Con esta directiva puede usar las condiciones, hacer que un elemento se muestre 
 ````
 Dependiendo del nombre que introduzca te verifica si eres o no Julian.
 
+# *ngFor para Arrays
+Con esta directiva puedes realizar un bucle.
+## Ejemplo básico
+```typescript
+names: string[] = [ 'Nico','Juli', 'Santi']
+````
 
+```html
+<ul>
+    <li *ngFor=" let name of names; index as i">
+        {{ i + name }}
+    </li>
+</ul>
+````
+Recorre el array names[] y los muestra en una lista html utilizando la variable inventada name y el indice i.
+## Ejemplo de for con añadir item, validación y borrado
+```typescript
+    names: string[] = [ 'Nico','Juli', 'Santi'];
+    newName = '';
+    addName(){
+        this.names.push(this.newName);
+        this.newName = '';
+    }
+````
+```html
+<button (click)="addName()">Add name</button>
+<input type="text" required [(ngModel)]="newName" />
+<ul>
+    <li *ngIf="names.length === 0">No hay nombres</li>
+    <li *ngFor=" let name of names; index as i">
+        {{ i + name }} <button (click)="deleteName(i)">Delete {{name}}</button>
+    </li>
+</ul>
+````
