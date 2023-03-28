@@ -145,3 +145,63 @@ Recorre el array names[] y los muestra en una lista html utilizando la variable 
     </li>
 </ul>
 ````
+# *ngFor para array de Objetos
+```typescript
+products: Product[] = [
+    {
+      name: 'EL mejor juguete',
+      price: 565,
+      image: './assets/images/toy.jpg',
+      category: 'all',
+    },
+    {
+      name: 'Bicicleta casi nueva',
+      price: 356,
+      image: './assets/images/bike.jpg'
+    }
+]
+````
+```html
+    <div *ngFor="let product of products">
+        <img [src]="product.image" alt="image">
+        <h2>{{ product.price }}</h2>
+        <p>{{ product.name }}</p>
+    </div>
+````
+Mostramos los datos de un array de objetos. El bucle for siempre necesitará un array para poder funcionar.
+
+# ngSwitch
+
+```html
+<input type="text" required [(ngModel)]="person.name" />
+<div [ngSwitch]="person.name">
+    <p *ngSwitchCase="'nicolas'">La persona es Nicolas</p>
+    <p *ngSwitchCase="'julian'">La persona es Julian</p>
+    <p *ngSwitchCase="'camilo'">La persona es Camilo</p>
+    <p *ngSwitchDefault >No hace match</p>
+</div>
+````
+Cuando el person.name cumpla la condición del switchCase se mostrará y configurado el mensaje por defecto.
+
+# NgClass & NgStyle
+
+```html
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name">
+<hr class="line-error"
+[ngClass]="{
+    'valid': nameInput4.valid,
+    'invalid': nameInput4.invalid
+}">
+````
+```css
+.line-error {
+    height: 0;
+    border-bottom: 4px solid;
+    &.invalid{
+        border-color: red;
+    }
+    &.valid{
+        border-color: green;
+    }
+}
+````
