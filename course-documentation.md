@@ -194,6 +194,7 @@ Con la interface nos aseguramos de la validación de tipos de cada uno de los el
 Cuando el person.name cumpla la condición del switchCase se mostrará y configurado el mensaje por defecto.
 
 # Class and Style
+
 ```html
 <input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
 <p class="message-error" [class.invalid]="nameInput2.invalid">El campo es requerido</p>
@@ -211,6 +212,14 @@ Cuando el person.name cumpla la condición del switchCase se mostrará y configu
 
 ````
 Con [(ngModel)] configurado en el input, la validación html "required", la variable o referencia de template #nameInput2 podemos en el <p> utilizar [class.invalid] para añadir la clase .invalid cuando nameInput2.invalid sea = true.
+
+## style
+
+```html
+<button [style.width]="width + 'px'">Botón con ancho dinámico</button>
+<button [style.width.px]="width">Botón con ancho en píxeles</button>
+<div [style]="styleExpression">Div con estilo personalizado</div>
+````
 # NgClass & NgStyle
 
 ```html
