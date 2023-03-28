@@ -15,6 +15,7 @@ export class AppComponent {
   btnDisabled:boolean = true;
   seleccion: string = 'opcion1';
   color:string ='rojo';
+  width = 100;
 
   register = {
     name:'',
@@ -100,6 +101,9 @@ export class AppComponent {
   }
   mostrarSeleccion() {
     console.log('La opción seleccionada es:', this.seleccion);
+  }
+  aumentar(){
+    this.width += 100;
   }
 
 

@@ -46,6 +46,9 @@
 
 
 <h1>Class & Style</h1>
+<button [style.width]="width + 'px'" (click)="aumentar()">Botón con ancho dinámico</button>
+<hr>
+
 <input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
 <p class="message-error" [class.invalid]="nameInput2.invalid">El campo es requerido</p>
 
